@@ -10,10 +10,10 @@ import Foundation
 
 class Concentration
 {
-    var cards = [Card]()
-    var score = 0
-    var flipCount = 0
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private(set) var cards = [Card]()
+    private(set) var score = 0
+    private(set) var flipCount = 0
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
             for index in cards.indices {
@@ -33,9 +33,9 @@ class Concentration
             }
         }
     }
-    var seenCards: Set<Int> = []
+    private var seenCards: Set<Int> = []
     
-    struct point {
+    private struct point {
            static let bonus = 2
            static let penalty = 1
     }
